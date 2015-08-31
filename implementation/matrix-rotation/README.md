@@ -60,3 +60,9 @@ Sample Output #02
 10 14 20 7
 4 3 2 1
 ```
+
+## Run
+
+```
+go run main.go < in
+```
