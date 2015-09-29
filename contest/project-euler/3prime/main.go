@@ -43,18 +43,28 @@ func trialDivision(max uint64) (maxPrime uint64) {
 	return
 }
 
-func eratosthenesSieve(max int) ([]int) {
-	mx := make([]bool, max+1)
+func eratosthenesSieve(max int) []int {
+	mx := make([]bool, max + 1)
 	for i := 2; i <= max; i += 2 {
 		mx[i] = true
 	}
-	primes := []int{2}
-	for i := 3; i <= max; i+= 2 {
+	n := 1
+	for i := 3; i <= max; i += 2 {
 		if mx[i] == false {
-			primes = append(primes, i)
-			for j := i; j <= max; j +=i {
+			n++
+			for j := i*i; j <= max; j += i {
 				mx[j] = true
 			}
+		}
+	}
+
+	primes := make([]int, n)
+	primes[0] = 2
+	j := 0
+	for i := 3; i <= max; i += 2 {
+		if mx[i] == false {
+			j++
+			primes[j]= i
 		}
 	}
 
