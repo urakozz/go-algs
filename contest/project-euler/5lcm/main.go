@@ -29,9 +29,7 @@ func process(n int) (res int) {
 
 func gcd(a, b int) int {
 	for b > 0 {
-		temp := b;
-		b = a % b; // % is remainder
-		a = temp;
+		a, b = b, a % b; // % is remainder
 	}
 	return a;
 }

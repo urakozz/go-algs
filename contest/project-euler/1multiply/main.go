@@ -17,6 +17,8 @@ func main(){
 	}
 }
 
+// Arithmetic progression
+// http://www.mathcentre.ac.uk/resources/uploaded/mc-ty-apgp-2009-1.pdf
 func sumAP(max, d int64) int64 {
 	if max < d {
 		return 0
