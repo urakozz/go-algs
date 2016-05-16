@@ -46,7 +46,7 @@ func main() {
 
 	go func(f chan<- struct{}){
 		c := make(chan os.Signal, 1)
-		signal.Notify(c, os.Interrupt)
+		 signal.Notify(c, os.Interrupt)
 		<-c
 		f <- struct{}{}
 	}(finish)
